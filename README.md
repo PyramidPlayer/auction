@@ -20,22 +20,23 @@ java -jar web/target/web-1.0-SNAPSHOT.jar
 
 Then REST-API for bidder became available in `http://localhost:8080/bidder` with following methods:
 
-####Initialization
+###Initialization
 ```commandline
 curl -X POST 'http://localhost:8080/bidder/init' -H 'Content-Type: application/json' -d '{"quantity":10, "cash":100}'
 ```
+
 Successfull response: Status code 200 and body `{"id":1}` - id of new initialized bidder that should be used in all following methods.
 
 Error response for all requests: `{"error":"error_message"}`
 
-####Place bid
+###Place bid
 
 ```commandline
 curl 'http://localhost:8080/bidder/place-bid?id=1'
 ```
 Successfull response: Status code 200 and body `{"bid":17}`
 
-####Bids
+###Bids
 ```commandline
 curl -X POST 'http://localhost:8080/bidder/bids?id=1' -H 'Content-Type: application/json' -d '{"ownBid":17,"otherBid":20}'
 ```
