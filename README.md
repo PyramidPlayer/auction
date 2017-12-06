@@ -13,10 +13,13 @@ Then there are 2 ways to use it.
 1. Add `bidder/target/bidder-1.0-SNAPSHOT.jar` to dependencies of your project and use `ru.toroptsev.AdvancedBidder` 
 class that implements `auction.Bidder` interface.
 2. Run from the root of project:
+
 ```commandline
 java -jar web/target/web-1.0-SNAPSHOT.jar
 ```
+
 Then REST-API for bidder became available in `http://localhost:8080/bidder` with following methods:
+
 ####Initialization
 ```commandline
 curl -X POST 'http://localhost:8080/bidder/init' -H 'Content-Type: application/json' -d '{"quantity":10, "cash":100}'
