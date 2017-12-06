@@ -21,6 +21,13 @@ public class BidderController {
 
     @Autowired
     private BiddingFacade biddingFacade;
+
+    @RequestMapping(value = "",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> init() {
+        return ResponseEntity.ok("Use /bidder/init to initialize");
+    }
     
     @RequestMapping(value = "/init",
             method = RequestMethod.POST,
